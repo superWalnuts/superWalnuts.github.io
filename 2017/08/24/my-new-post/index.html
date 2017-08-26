@@ -35,20 +35,19 @@
 <link rel="canonical" href="https://superwalnuts.github.io/2017/08/24/my-new-post/"/>
 
 
-<meta name="description" content="#什么时候需要这么干？ 当一个业务型APP发展到一定程度的时候，首页一定是一个业务方施展拳脚的重要阵地，这就会导致首页会有很多业务模块，可能每个业务模块都很复杂，有自己的数据源，有自己的业务逻辑。有的模块可能只需要一个固定的展示区域，有的模块可能需要一个列表。就像这样～">
+<meta name="description" content="##什么时候需要这么干？ 当一个业务型APP发展到一定程度的时候，首页一定是一个业务方施展拳脚的重要阵地，这就会导致首页会有很多业务模块，可能每个业务模块都很复杂，有自己的数据源，有自己的业务逻辑。有的模块可能只需要一个固定的展示区域，有的模块可能需要一个列表。并且业务变化很快，要非常方便的删除或者添加一个新的模块，就像这样～  云音乐个性推荐这一页面由，Banner模块+推荐模块+N多模块。而且">
 <meta name="keywords" content="iOS,MVVM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS 使用MVVM加TableView构建复杂列表界面">
 <meta property="og:url" content="https://superwalnuts.github.io/2017/08/24/my-new-post/index.html">
 <meta property="og:site_name" content="小闪电">
-<meta property="og:description" content="#什么时候需要这么干？ 当一个业务型APP发展到一定程度的时候，首页一定是一个业务方施展拳脚的重要阵地，这就会导致首页会有很多业务模块，可能每个业务模块都很复杂，有自己的数据源，有自己的业务逻辑。有的模块可能只需要一个固定的展示区域，有的模块可能需要一个列表。就像这样～">
+<meta property="og:description" content="##什么时候需要这么干？ 当一个业务型APP发展到一定程度的时候，首页一定是一个业务方施展拳脚的重要阵地，这就会导致首页会有很多业务模块，可能每个业务模块都很复杂，有自己的数据源，有自己的业务逻辑。有的模块可能只需要一个固定的展示区域，有的模块可能需要一个列表。并且业务变化很快，要非常方便的删除或者添加一个新的模块，就像这样～  云音乐个性推荐这一页面由，Banner模块+推荐模块+N多模块。而且">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://superwalnuts.github.io/2017/08/24/my-new-post/images/IMG_1604.png">
-<meta property="og:image" content="https://superwalnuts.github.io/2017/08/24/my-new-post/images/IMG_1605.png">
-<meta property="og:updated_time" content="2017-08-26T04:46:21.000Z">
+<meta property="og:updated_time" content="2017-08-26T05:13:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS 使用MVVM加TableView构建复杂列表界面">
-<meta name="twitter:description" content="#什么时候需要这么干？ 当一个业务型APP发展到一定程度的时候，首页一定是一个业务方施展拳脚的重要阵地，这就会导致首页会有很多业务模块，可能每个业务模块都很复杂，有自己的数据源，有自己的业务逻辑。有的模块可能只需要一个固定的展示区域，有的模块可能需要一个列表。就像这样～">
+<meta name="twitter:description" content="##什么时候需要这么干？ 当一个业务型APP发展到一定程度的时候，首页一定是一个业务方施展拳脚的重要阵地，这就会导致首页会有很多业务模块，可能每个业务模块都很复杂，有自己的数据源，有自己的业务逻辑。有的模块可能只需要一个固定的展示区域，有的模块可能需要一个列表。并且业务变化很快，要非常方便的删除或者添加一个新的模块，就像这样～  云音乐个性推荐这一页面由，Banner模块+推荐模块+N多模块。而且">
 <meta name="twitter:image" content="https://superwalnuts.github.io/2017/08/24/my-new-post/images/IMG_1604.png">
 
 
@@ -133,9 +132,16 @@
 
     
             <div class="post-content">
-            <p>#什么时候需要这么干？</p>
-<p>当一个业务型APP发展到一定程度的时候，首页一定是一个业务方施展拳脚的重要阵地，这就会导致首页会有很多业务模块，可能每个业务模块都很复杂，有自己的数据源，有自己的业务逻辑。有的模块可能只需要一个固定的展示区域，有的模块可能需要一个列表。就像这样～</p>
-<p><img src="images/IMG_1604.png" width="180" height="320" alt="CSDN图标"><br><img src="images/IMG_1605.png" width="180" height="320" alt="CSDN图标"></p>
+            <p>##什么时候需要这么干？</p>
+<p>当一个业务型APP发展到一定程度的时候，首页一定是一个业务方施展拳脚的重要阵地，这就会导致首页会有很多业务模块，可能每个业务模块都很复杂，有自己的数据源，有自己的业务逻辑。有的模块可能只需要一个固定的展示区域，有的模块可能需要一个列表。并且业务变化很快，要非常方便的删除或者添加一个新的模块，就像这样～</p>
+<p><img src="images/IMG_1604.png" width="180" height="320" alt="CSDN图标"></p>
+<p>云音乐个性推荐这一页面由，Banner模块+推荐模块+N多模块。而且可能多人同时开发这个界面，良好的结构必不可少。</p>
+<p>####总结起来以下几点</p>
+<ol>
+<li>一个页面有多个复杂业务模块</li>
+<li>需要非常方便的删除，添加，移动，复用每个模块</li>
+<li>需要模块间完全解耦合，方便多个开发并行开发</li>
+</ol>
 
             </div>
           
