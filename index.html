@@ -1,39 +1,17 @@
-<!DOCTYPE html>
-<html lang="">
-  <head>
+
+ <!DOCTYPE HTML>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>小闪电</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
-<meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+    <meta name="author" content="superman">
+    
 
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-  <meta name="description" content="3.1415926"/>
-
-
-
-
-
-
-
-
-  <link rel="alternate" href="/default" title="小闪电">
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/icon.png?v=1.1" />
-
-
-
-<link rel="canonical" href="https://superwalnuts.github.io/"/>
-
-
-<meta property="og:type" content="website">
+    
+    <meta property="og:type" content="website">
 <meta property="og:title" content="小闪电">
 <meta property="og:url" content="https://superwalnuts.github.io/index.html">
 <meta property="og:site_name" content="小闪电">
@@ -41,166 +19,323 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小闪电">
 
+    
+    <link rel="alternative" href="/atom.xml" title="小闪电" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.png">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
 
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
-<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="小闪电" title="小闪电"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="小闪电">小闪电</a></h1>
+				<h2 class="blog-motto">很厉害666</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:superwalnuts.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main">
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/08/24/my-new-post/" title="iOS 使用MVVM加TableView构建复杂列表界面" itemprop="url">iOS 使用MVVM加TableView构建复杂列表界面</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="superman" target="_blank" itemprop="author">superman</a>
+		
+  <p class="article-time">
+    <time datetime="2017-08-24T12:00:00.000Z" itemprop="datePublished"> Published 2017-08-24</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="什么时候需要这么干？"><a href="#什么时候需要这么干？" class="headerlink" title="什么时候需要这么干？"></a>什么时候需要这么干？</h2><p>当一个业务型APP发展到一定程度的时候，首页一定是一个业务方施展拳脚的重要阵地，这就会导致首页会有很多业务模块，可能每个业务模块都很复杂，有自己的数据源，有自己的业务逻辑。有的模块可能只需要一个固定的展示区域，有的模块可能需要一个列表。并且业务变化很快，要非常方便的删除或者添加一个新的模块，就像这样～</p>
+<p><img src="images/IMG_1604.png" width="180" height="320" alt="CSDN图标"></p>
+<p>云音乐个性推荐这一页面由，Banner模块+推荐模块+N多模块。而且可能多人同时开发这个界面，良好的结构必不可少。</p>
+<h3 id="总结起来以下几点"><a href="#总结起来以下几点" class="headerlink" title="总结起来以下几点"></a>总结起来以下几点</h3><ol>
+<li>一个页面有多个复杂业务模块</li>
+<li>需要非常方便的删除，添加，移动，复用每个模块</li>
+<li>需要模块间完全解耦合，方便多个开发并行开发</li>
+</ol>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/复杂列表页面架构/">复杂列表页面架构</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/iOS/">iOS</a><a href="/tags/MVVM/">MVVM</a>
+  </div>
+
+</div>
 
 
 
 
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+
+</div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/复杂列表页面架构/" title="复杂列表页面架构">复杂列表页面架构<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/iOS/" title="iOS">iOS<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/MVVM/" title="MVVM">MVVM<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> DaDaDaDa Peng <br/>
+			Happiness is the consequence of personal effort.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="" target="_blank" title="hexo">DaPeng</a>  © 2017 
+		
+		<a href="/about" target="_blank" title="superman">superman</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
 
 <script type="text/javascript">
-  var themeConfig = {
-    fancybox: {
-      enable: false
-    },
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
   };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+});
 </script>
 
 
 
 
-  
-
-
-
-    <title> 小闪电 - 3.1415926</title>
-  </head>
-
-  <body>
-    <div id="page">
-      <header id="masthead"><div class="site-header-inner">
-    <h1 class="site-title">
-        <a href="/." class="logo">小闪电</a>
-    </h1>
-
-    <nav id="nav-top">
-        
-            <ul id="menu-top" class="nav-top-items">
-                
-                    <li class="menu-item">
-                        <a href="/archives">
-                            
-                            
-                                目录
-                            
-                        </a>
-                    </li>
-                
-                    <li class="menu-item">
-                        <a href="/2017/08/24/hello-world">
-                            
-                            
-                                Me
-                            
-                        </a>
-                    </li>
-                
-            </ul>
-        
-  </nav>
-</div>
-
-      </header>
-      <div id="content">
-        
-    <div id="primary" class="home">
-        
-            
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/08/24/my-new-post/">iOS 使用MVVM加TableView构建复杂列表界面</a>
-        
-      </h1>
-
-      <time class="post-time">
-          Aug 24 2017
-      </time>
-    </header>
-
-
-
-    
-        <div class="post-excerpt">
-            
-            
-
-            
-          
-
-    
-  </article>
-
-        
-        
-  <nav class="pagination">
-    
-    
-  </nav>
-
-    </div>
-    <div id="secondary">
-    
-    <section id="about" class="widget-area">
-        <h3 class="widget-title"><p>我最帅</p></h3>
-        <p>老铁，来波6666666</p>
-    </section>
-
-
-    
-    <section id="tags" class="widget-area widget_categories">
-        <h3 class="widget-title">分类</h3>
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/复杂列表页面架构/">复杂列表页面架构</a><span class="category-list-count">1</span></li></ul>
-    </section>
-
-
-    
-    <section id="tags" class="widget-area widget_tags">
-        <h3 class="widget-title">标签</h3>
-        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVVM/">MVVM</a><span class="tag-list-count">1</span></li></ul>
-    </section>
-
-
-</div>
-
-
-      </div>
-
-      <footer id="colophon"><span class="copyright-year">
-    
-        &copy;
-    
-    2017
-    <span class="footer-author">superman.</span>
-    <span class="power-by">
-        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
-    </span>
-</span>
-
-      </footer>
-
-      <div class="back-to-top" id="back-to-top">
-        <i class="iconfont icon-up"></i>
-      </div>
-    </div>
-    
-
-
-    
 
 
 
 
-  
-    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
-  
 
-  
 
-    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
-<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
 
   </body>
-</html>
+ </html>
