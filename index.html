@@ -107,6 +107,7 @@
 <li>viewModel包含对原始数据的处理和用户操作的处理，比如说一个评价界面，把原始数据转化成View要使用的数据需要在业务逻辑中实现，用户评价了什么，点了几颗星星，是否允许用户提交评价，这些也需要在业务逻辑中实现</li>
 </ol>
 <p><code>controller</code>中只对<code>View</code>进行操作，其他的逻辑都放到<code>viewModel</code>中，这就使得原本臃肿的逻辑层变得清晰有条理。controller中会有对viewModel的引用，并且用<a href="https://www.baidu.com/s?wd=什么是MVVM" target="_blank" rel="external">RAC</a>绑定viewModel中的变量，这样viewModel只要更改自身属性就能达到更改View的效果，不需要引用controller。</p>
+<p><center><br><img src="images/IMG_1606.png" width="300" height="300" alt="MVVM结构"><br></center></p>
 
         
         
