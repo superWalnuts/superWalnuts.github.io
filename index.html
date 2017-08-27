@@ -108,6 +108,8 @@
 </ol>
 <p><code>controller</code>中只对<code>View</code>进行操作，其他的逻辑都放到<code>viewModel</code>中，这就使得原本臃肿的逻辑层变得清晰有条理。controller中会有对viewModel的引用，并且用<a href="https://www.baidu.com/s?wd=什么是MVVM" target="_blank" rel="external">RAC</a>绑定viewModel中的变量，这样viewModel只要更改自身属性就能达到更改View的效果，不需要引用controller。</p>
 <p><center><br><img src="images/IMG_1606.png" width="300" height="300" alt="MVVM结构"><br></center></p>
+<h2 id="一起从头开始搞起"><a href="#一起从头开始搞起" class="headerlink" title="一起从头开始搞起"></a>一起从头开始搞起</h2><h3 id="我们要搞什么？"><a href="#我们要搞什么？" class="headerlink" title="我们要搞什么？"></a>我们要搞什么？</h3><p>我们要做一个包含三个不同model的界面，每个model彼此隔离，有自己的数据源，其中一个Model是一个不确定数量的列表，三个model位置可以随意移动。</p>
+<h3 id="页面整体结构"><a href="#页面整体结构" class="headerlink" title="页面整体结构"></a>页面整体结构</h3><p>在最开始我先给大家介绍一下页面的整体架构是什么样子的，总共包含几个部分，每个部分的作用是什么，数据流向是怎样的，整个架构如何运作。</p>
 
         
         

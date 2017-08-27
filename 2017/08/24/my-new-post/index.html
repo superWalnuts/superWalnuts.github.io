@@ -21,7 +21,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://superwalnuts.github.io/2017/08/24/my-new-post/images/IMG_1604.png">
 <meta property="og:image" content="https://superwalnuts.github.io/2017/08/24/my-new-post/images/IMG_1606.png">
-<meta property="og:updated_time" content="2017-08-27T06:52:09.000Z">
+<meta property="og:updated_time" content="2017-08-27T15:34:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS 使用MVVM+TableView+RAC构建复杂列表界面">
 <meta name="twitter:description" content="什么时候需要这么干？当一个业务型APP发展到一定程度的时候，首页一定是一个业务方施展拳脚的重要阵地，这就会导致首页会有很多业务模块，可能每个业务模块都很复杂，有自己的数据源，有自己的业务逻辑。有的模块可能只需要一个固定的展示区域，有的模块可能需要一个列表。并且业务变化很快，要非常方便的删除或者添加一个新的模块，就像这样～  云音乐个性推荐这一页面由，Banner模块+推荐模块+N多模块。而且可能多">
@@ -101,7 +101,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么时候需要这么干？"><span class="toc-number">1.</span> <span class="toc-text">什么时候需要这么干？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#总结起来以下几点"><span class="toc-number">1.1.</span> <span class="toc-text">总结起来以下几点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MVVM是什么？"><span class="toc-number">2.</span> <span class="toc-text">MVVM是什么？</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么时候需要这么干？"><span class="toc-number">1.</span> <span class="toc-text">什么时候需要这么干？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#总结起来以下几点"><span class="toc-number">1.1.</span> <span class="toc-text">总结起来以下几点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MVVM是什么？"><span class="toc-number">2.</span> <span class="toc-text">MVVM是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一起从头开始搞起"><span class="toc-number">3.</span> <span class="toc-text">一起从头开始搞起</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#我们要搞什么？"><span class="toc-number">3.1.</span> <span class="toc-text">我们要搞什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#页面整体结构"><span class="toc-number">3.2.</span> <span class="toc-text">页面整体结构</span></a></li></ol></li></ol>
 		
 		</div>
 		
@@ -121,6 +121,8 @@
 </ol>
 <p><code>controller</code>中只对<code>View</code>进行操作，其他的逻辑都放到<code>viewModel</code>中，这就使得原本臃肿的逻辑层变得清晰有条理。controller中会有对viewModel的引用，并且用<a href="https://www.baidu.com/s?wd=什么是MVVM" target="_blank" rel="external">RAC</a>绑定viewModel中的变量，这样viewModel只要更改自身属性就能达到更改View的效果，不需要引用controller。</p>
 <p><center><br><img src="images/IMG_1606.png" width="300" height="300" alt="MVVM结构"><br></center></p>
+<h2 id="一起从头开始搞起"><a href="#一起从头开始搞起" class="headerlink" title="一起从头开始搞起"></a>一起从头开始搞起</h2><h3 id="我们要搞什么？"><a href="#我们要搞什么？" class="headerlink" title="我们要搞什么？"></a>我们要搞什么？</h3><p>我们要做一个包含三个不同model的界面，每个model彼此隔离，有自己的数据源，其中一个Model是一个不确定数量的列表，三个model位置可以随意移动。</p>
+<h3 id="页面整体结构"><a href="#页面整体结构" class="headerlink" title="页面整体结构"></a>页面整体结构</h3><p>在最开始我先给大家介绍一下页面的整体架构是什么样子的，总共包含几个部分，每个部分的作用是什么，数据流向是怎样的，整个架构如何运作。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -163,7 +165,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么时候需要这么干？"><span class="toc-number">1.</span> <span class="toc-text">什么时候需要这么干？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#总结起来以下几点"><span class="toc-number">1.1.</span> <span class="toc-text">总结起来以下几点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MVVM是什么？"><span class="toc-number">2.</span> <span class="toc-text">MVVM是什么？</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么时候需要这么干？"><span class="toc-number">1.</span> <span class="toc-text">什么时候需要这么干？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#总结起来以下几点"><span class="toc-number">1.1.</span> <span class="toc-text">总结起来以下几点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MVVM是什么？"><span class="toc-number">2.</span> <span class="toc-text">MVVM是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一起从头开始搞起"><span class="toc-number">3.</span> <span class="toc-text">一起从头开始搞起</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#我们要搞什么？"><span class="toc-number">3.1.</span> <span class="toc-text">我们要搞什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#页面整体结构"><span class="toc-number">3.2.</span> <span class="toc-text">页面整体结构</span></a></li></ol></li></ol>
  
   </div>
 
