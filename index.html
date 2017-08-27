@@ -7,7 +7,7 @@
     <title>小闪电</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
-    <meta name="author" content="superman">
+    <meta name="author" content="DaDaDaDaPeng">
     
 
     
@@ -43,7 +43,7 @@
 			
 			<div id="textlogo">
 				<h1 class="site-name"><a href="/" title="小闪电">小闪电</a></h1>
-				<h2 class="blog-motto">很厉害666</h2>
+				<h2 class="blog-motto">这个是大大大大鹏的Blogs</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
@@ -79,11 +79,11 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/08/24/my-new-post/" title="iOS 使用MVVM加TableView构建复杂列表界面" itemprop="url">iOS 使用MVVM加TableView构建复杂列表界面</a>
+      <a href="/2017/08/24/my-new-post/" title="iOS 使用MVVM+TableView+RAC构建复杂列表界面" itemprop="url">iOS 使用MVVM+TableView+RAC构建复杂列表界面</a>
   </h1>
   <p class="article-author">By
        
-		<a href="/about" title="superman" target="_blank" itemprop="author">superman</a>
+		<a href="/about" title="DaDaDaDaPeng" target="_blank" itemprop="author">DaDaDaDaPeng</a>
 		
   <p class="article-time">
     <time datetime="2017-08-24T12:00:00.000Z" itemprop="datePublished"> Published 2017-08-24</time>
@@ -93,13 +93,20 @@
     <div class="article-content">
         
         <h2 id="什么时候需要这么干？"><a href="#什么时候需要这么干？" class="headerlink" title="什么时候需要这么干？"></a>什么时候需要这么干？</h2><p>当一个业务型APP发展到一定程度的时候，首页一定是一个业务方施展拳脚的重要阵地，这就会导致首页会有很多业务模块，可能每个业务模块都很复杂，有自己的数据源，有自己的业务逻辑。有的模块可能只需要一个固定的展示区域，有的模块可能需要一个列表。并且业务变化很快，要非常方便的删除或者添加一个新的模块，就像这样～</p>
-<p><img src="images/IMG_1604.png" width="180" height="320" alt="CSDN图标"></p>
+<p><img src="images/IMG_1604.png" width="180" height="320" alt="网易云音乐"></p>
 <p>云音乐个性推荐这一页面由，Banner模块+推荐模块+N多模块。而且可能多人同时开发这个界面，良好的结构必不可少。</p>
 <h3 id="总结起来以下几点"><a href="#总结起来以下几点" class="headerlink" title="总结起来以下几点"></a>总结起来以下几点</h3><ol>
 <li>一个页面有多个复杂业务模块</li>
+<li>一个模块中可能出现列表样式 </li>
 <li>需要非常方便的删除，添加，移动，复用每个模块</li>
-<li>需要模块间完全解耦合，方便多个开发并行开发</li>
+<li>需要模块间完全解耦合，逻辑，数据源彼此隔离，方便多个开发并行开发</li>
 </ol>
+<h2 id="MVVM是什么？"><a href="#MVVM是什么？" class="headerlink" title="MVVM是什么？"></a>MVVM是什么？</h2><p>网上讲<a href="https://www.baidu.com/s?wd=%E4%BB%80%E4%B9%88%E6%98%AFMVVM" target="_blank" rel="external">MVVM</a>的文章已经太多了，想要了解可以自己搜索。这里说一下我自己的理解。一个App大致可以分为三个部分，数据处理（model），逻辑处理（controller），视图（view），根据这三个部分我们可以想到传统的<a href="https://www.baidu.com/s?wd=什么是MVVC" target="_blank" rel="external">MVC</a>架构。其实在一般的小型App中用MVC架构可以完全搞的定了，但是在一些大型的App中业务逻辑相当复杂，这样会使得逻辑层特别臃肿，所以我们不得不把逻辑层拆分成两个部分，视图逻辑（controller），业务逻辑（viewModel）。</p>
+<ol>
+<li>controller包含对View操作的逻辑，比如根据数据来判断View的显示和隐藏，Text的Color和Size。</li>
+<li>viewModel包含对原始数据的处理和用户操作的处理，比如说一个评价界面，把原始数据转化成View要使用的数据需要在业务逻辑中实现，用户评价了什么，点了几颗星星，是否允许用户提交评价，这些也需要在业务逻辑中实现</li>
+</ol>
+<p><code>controller</code>中只对<code>View</code>进行操作，其他的逻辑都放到<code>viewModel</code>中，这就使得原本臃肿的逻辑层变得清晰有条理。controller中会有对viewModel的引用，并且用<a href="https://www.baidu.com/s?wd=什么是MVVM" target="_blank" rel="external">RAC</a>绑定viewModel中的变量，这样viewModel只要更改自身属性就能达到更改View的效果，不需要引用controller。</p>
 
         
         
@@ -118,7 +125,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/iOS/">iOS</a><a href="/tags/MVVM/">MVVM</a>
+  <span></span> <a href="/tags/iOS/">iOS</a><a href="/tags/MVVM/">MVVM</a><a href="/tags/RAC/">RAC</a>
   </div>
 
 </div>
@@ -174,6 +181,10 @@
 				<li><a href="/tags/MVVM/" title="MVVM">MVVM<sup>1</sup></a></li>
 			
 		
+			
+				<li><a href="/tags/RAC/" title="RAC">RAC<sup>1</sup></a></li>
+			
+		
 		</ul>
 </div>
 
@@ -212,7 +223,7 @@
 		<p class="copyright">
 		Powered by <a href="" target="_blank" title="hexo">DaPeng</a>  © 2017 
 		
-		<a href="/about" target="_blank" title="superman">superman</a>
+		<a href="/about" target="_blank" title="DaDaDaDaPeng">DaDaDaDaPeng</a>
 		
 		
 		</p>
