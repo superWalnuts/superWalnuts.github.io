@@ -45,7 +45,7 @@
 				<h1 class="site-name"><a href="/" title="小闪电">小闪电</a></h1>
 				<h2 class="blog-motto">这个是大大大大鹏的Blogs</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -61,7 +61,7 @@
  					
 						<form class="search" action="https://www.baidu.com/s?wd=" target="_blank">
 							<label>Search</label>
-						<input name="s" type="hidden" value=  ><input type="text" name="q" size="30" placeholder="搜索"><br>
+						<input name="s" type="hidden" value=  ><input type="text" name="q" size="30" placeholder="Search"><br>
 						</form>
 					
 					</li>
@@ -85,7 +85,7 @@
 		<a href="/about" title="DaDaDaDaPeng" target="_blank" itemprop="author">DaDaDaDaPeng</a>
 		
   <p class="article-time">
-    <time datetime="2017-08-24T12:00:00.000Z" itemprop="datePublished"> 发表于 2017-08-24</time>
+    <time datetime="2017-08-24T12:00:00.000Z" itemprop="datePublished"> Published 2017-08-24</time>
     
   </p>
 </header>
@@ -112,17 +112,19 @@
 <ul>
 <li>首先我们需要创建一个<code>ViewController</code>，在这个ViewController中一定要包含一个<code>TableView</code>来当作这个界面所有视图的容器。之后的每一个子model都会做为这个TableView的一个Section，这样每个子model都可以轻松控制自己包含多少个Cell。</li>
 <li>之后我们要为这个ViewController创建一个<code>MainViewModel</code>，这MainViewModel的主要工作就是管理所有子model，比如每个子model在列表中的位置。</li>
-<li>之后我们要去实现一个<code>TableViewBinder</code>，它的作用是绑定MainViewModel和ViewController中的TableView，MainViewModel为TableView提供数据源，TableView为MainViewModel提供刷新界面的方法。在TableViewBinder中我们需要实现TableView的一些delegate，并且调用MainViewModel的方法获取数据源给TableView使用，而且要给MainViewModel中的一些用来刷新界面Block复制，让MainViewModel有刷新界面的能力。</li>
+<li>之后我们要去实现一个<code>TableViewBinder</code>，它的作用是绑定MainViewModel和ViewController中的TableView，MainViewModel为TableView提供数据源，TableView为MainViewModel提供刷新界面的方法。在TableViewBinder中我们需要实现TableView的一些delegate，并且调用MainViewModel的方法获取数据源给TableView使用，而且要给MainViewModel中的一些用来刷新界面Block赋值，让MainViewModel有刷新界面的能力。</li>
 <li><p>之后我们要为每个子model创建一个<code>SubViewModel</code>，在SubViewModel中的主要任务就是处理当前子model的业务逻辑。SubViewModel必须要实现以下两个个接口</p>
 <blockquote>
 <p>1.返回当前SubViewModel有多少个<code>ChildViewModel</code>（返回数量）</p>
 <p>2.返回对应Index对应的ChildViewModel（返回具体内容）</p>
 </blockquote>
 </li>
-<li><p>每个<code>ChildViewModel</code>都要一一对应一个<code>ChildView</code>,这个ChildView也就是要最后要绘制到列表上的View，ChildViewModel可以实现一些针对于ChildView比较细节的逻辑，ChildViewModel只暴露一些ChildView需要的字段，ChildView会持有ChildViewModel的引用，并且用RAC绑定ChildViewModel暴露出来的属性，这样就能达到ChildViewModel更新属性ChildView也跟着变化的效果。ChildViewModel中必须要实现一个返回ChildView对象的接口，这样可以吧ChildViewModel和ChildView一一对应起来。</p>
+<li><p>SubViewModel和ChildViewModel之间有什么关系？一个SubViewModel可以包含零个或者多个ChildViewModel。其实之前已经说过了SubViewModel会对应TableView中的一个Section，SubViewModel的数量就是TableView中Section的数量，那么ChildViewModel也就对应着TableView中Section中的Cell，SubViewModel中ChildViewModel的数量就是这个SubViewModel对应Section中Cell的数量。</p>
 </li>
-<li>SubViewModel和ChildViewModel之间有什么关系？一个SubViewModel可以包含零个或者多个ChildViewModel。其实之前已经说过了SubViewModel会对应TableView中的一个Section，SubViewModel的数量就是TableView中Section的数量，那么ChildViewModel也就对应着TableView中Section中的Cell，SubViewModel中ChildViewModel的数量就是这个SubViewModel对应Section中Cell的数量。</li>
+<li>每个<code>ChildViewModel</code>都要一一对应一个<code>ChildView</code>,这个ChildView也就是要最后要绘制到列表上的View，ChildViewModel可以实现一些针对于ChildView比较细节的逻辑，ChildViewModel只暴露一些ChildView需要的字段，ChildView会持有ChildViewModel的引用，并且用RAC绑定ChildViewModel暴露出来的属性，这样就能达到ChildViewModel更新属性ChildView也跟着变化的效果。ChildViewModel中必须要实现一个返回ChildView对象的接口，这样可以吧ChildViewModel和ChildView一一对应起来。</li>
 </ul>
+<p>上面出的逻辑读起来可能有点迷惑，下面画个图</p>
+<p><center><br><img src="images/IMG_1607.png" width="500" height="500" alt="MVVM+TableView结构"><br></center></p>
 
         
         
@@ -165,15 +167,15 @@
 
 
 </div>
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分类</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -186,7 +188,7 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">标签</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
@@ -348,7 +350,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
